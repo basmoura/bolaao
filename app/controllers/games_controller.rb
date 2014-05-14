@@ -14,8 +14,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-
-    if @game
+    if @game.save
       redirect_to games_path
       flash[:success] = "Jogo cadastrado com sucesso"
     else
@@ -47,6 +46,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:team_a, :team_b, :score_ta, :score_tb)
+    params.require(:game).permit(:dt_game, :hr_game, :team_a, :team_b, :score_ta, :score_tb)
   end
 end
