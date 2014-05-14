@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <th>Jogo</th>
+    <th>Data do Jogo</th>
+    <th>Resultado</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= "#{game.team_a} x #{game.team_b}" %></td>
+        <td><%= "#{game.dt_game} #{game.hr_game}" %></td>
+        <td></td>
+        <td>
+          <%= link_to "Editar", edit_game_path(game) %>
+          <%= link_to "Remover", game, method: :delete, data: { confirm: "Deseja remover esse jogo?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

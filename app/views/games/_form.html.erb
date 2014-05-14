@@ -1,0 +1,45 @@
+<%= simple_form_for @game, defaults: { label: false } do |f| %>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.input :dt_game, label: "Data do Jogo", as: :string, input_html: { class: "form-control dt_game" } %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.input :hr_game, label: "Horário do Jogo", as: :string, input_html: { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.input :team_a, label: "Time A", input_html: { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.input :team_b, label: "Time B", input_html: { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.input :score_ta, label: "Resultado Time A", input_html: { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.input :score_tb, label: "Resultado Time B", input_html: { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Salvar", class: "btn btn-success" %>
+    <%= link_to "Voltar", games_path, class: "btn btn-link" %>
+  </div>
+<% end %>
