@@ -12,5 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-datepicker
+//= require locales/bootstrap-datepicker.pt-BR
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('.dt_game').datepicker({
+    format: "dd/mm/yyyy",
+  language: "pt-BR",
+  keyboardNavigation: false,
+  forceParse: false,
+  autoclose: true,
+  todayHighlight: true
+  });
+});
