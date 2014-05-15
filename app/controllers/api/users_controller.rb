@@ -1,12 +1,12 @@
 module API
-  class UsersController < AplicationController
+  class UsersController < ApplicationController
+    def index
+      render json: User.all
+    end
+
     def create
       user = User.new(user_params)
-      if user.save
-        respond_with user
-      else
-        respond_with false
-      end
+      render json: user, location: user_path(user) if user.save
     end
 
     private
