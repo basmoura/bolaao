@@ -1,13 +1,19 @@
 <%= simple_form_for @game, defaults: { label: false } do |f| %>
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-4">
       <div class="form-group">
-        <%= f.input :dt_game, label: "Data do Jogo", as: :string, input_html: { class: "form-control dt_game" } %>
+        <%= f.input :nr, label: "Número do Jogo", input_html: { class: "form-control" } %>
       </div>
     </div>
-    <div class="col-lg-6">
+
+    <div class="col-lg-4">
       <div class="form-group">
-        <%= f.input :hr_game, label: "Horário do Jogo", as: :string, input_html: { class: "form-control" } %>
+        <%= f.input :dt_game, label: "Data do Jogo", as: :string, input_html: { class: "form-control dt_game", value: f.object.dt_game } %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <%= f.input :hr_game, label: "Horário do Jogo", as: :string, input_html: { class: "form-control", value: f.object.hr_game } %>
       </div>
     </div>
   </div>
