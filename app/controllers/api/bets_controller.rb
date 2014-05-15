@@ -1,5 +1,5 @@
 module API
-  class BetsController < ApplicationController
+  class BetsController < ActionController::Base
     def index
       render json: Bet.all
     end

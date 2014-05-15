@@ -1,5 +1,5 @@
 module API
-  class UsersController < ApplicationController
+  class UsersController < ActionController::Base
     def index
       render json: User.all
     end
