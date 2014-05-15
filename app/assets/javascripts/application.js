@@ -15,7 +15,6 @@
 //= require bootstrap.min
 //= require bootstrap-datepicker
 //= require locales/bootstrap-datepicker.pt-BR
-//= require turbolinks
 //= require_tree .
 
 $(function() {
